@@ -9,8 +9,12 @@ public class DestroyWhenOutOfBounds : MonoBehaviour
     
     void Update()
     {
-        //I could use an if/elseif to do this, but this does the same thing with half the lines of code.
-        if ((transform.position.z > topOfScene) || (transform.position.z < bottomOfScene))
+        if (transform.position.z > topOfScene)
             Destroy(gameObject);
+        else if (transform.position.z < bottomOfScene)
+        {
+            Destroy(gameObject);
+            Debug.Log("Game Over!");
+        }
     }
 }
